@@ -8,6 +8,10 @@
     <link rel='stylesheet' href='/css/app.css'/>
 </head>
 <body>
-    @yield('content')
+    <div class="container-fluid">
+        <div class='p-4'>
+            @yield('content')
+        </div>
+    </div>
 </body>
 </html>
