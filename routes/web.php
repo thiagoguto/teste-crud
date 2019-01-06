@@ -8,4 +8,4 @@ Route::post('/cliente/{id}', 'ClienteController@update')->name('updateCliente');
 Route::get('/novo', 'ClienteController@create')->name('createCliente');
 Route::get('/cliente/{id}', 'ClienteController@show')->name('showCliente');
 Route::get('/cliente/{id}/editar', 'ClienteController@edit')->name('editCliente');
-Route::delete('/cliente/{id}', 'ClienteController@destroy')->name('destroyCliente');
+Route::delete('/delete/{id}', 'ClienteController@destroy')->name('destroyCliente');

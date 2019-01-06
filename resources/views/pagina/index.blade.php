@@ -30,7 +30,16 @@
                     <td>{{ $c->cnpj }}</td>
                     <td>{{ $c->created_at->format('d/m/y') }}</td>
                     <td>{{ $c->updated_at->format('d/m/y') }}</td>
-                    <td><a class="btn btn-primary btn-sm" href="cliente/{{ $c->id }}/editar" >editar</a><a class="btn btn-danger btn-sm" href="" >excluir</a></td>
+                    <td class="row">
+                        <a class="btn btn-primary btn-sm" href="cliente/{{ $c->id }}/editar" >
+                            editar
+                        </a>
+                        <form action="{{ route('destroyCliente', $c->id)}}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger btn-sm" type="submit">excluir</button>
+                            </form>
+                        </td>
                 </tr>
                 @endforeach
             </tbody>
