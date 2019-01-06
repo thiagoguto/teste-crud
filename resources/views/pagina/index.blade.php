@@ -30,7 +30,7 @@
                     <td>{{ $c->cnpj }}</td>
                     <td>{{ $c->created_at->format('d/m/y') }}</td>
                     <td>{{ $c->updated_at->format('d/m/y') }}</td>
-                    <td><a class="btn btn-primary btn-sm" href="" >editar</a><a class="btn btn-danger btn-sm" href="" >excluir</a></td>
+                    <td><a class="btn btn-primary btn-sm" href="cliente/{{ $c->id }}/editar" >editar</a><a class="btn btn-danger btn-sm" href="" >excluir</a></td>
                 </tr>
                 @endforeach
             </tbody>

@@ -35,12 +35,23 @@ class ClienteController extends Controller
 
     public function edit($id)
     {
-        return view('pagina.edit');
+        $cliente = Cliente::find($id);
+
+        return view('pagina.edit',['cliente' => $cliente]);
     }
 
     public function update(Request $request, $id)
     {
-        //
+        $cliente = Cliente::find($id);
+        $cliente->nome = $request->get('nome');
+        $cliente->idade = $request->get('idade');
+        $cliente->tipo = $request->get('tipo');
+        $cliente->ativo = $request->get('ativo');
+        $cliente->cpf = $request->get('cpf');
+        $cliente->cnpj = $request->get('cnpj');
+        
+        $cliente->push($id);
+        return redirect('/')->with('editado','O cliente ' . $cliente->nome . ' foi alterado com sucesso.');
     }
 
     public function destroy($id)
