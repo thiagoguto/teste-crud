@@ -1,7 +1,8 @@
 @extends('assets.app')
 @section('content')
     <h1>Novo Cliente</h1>
-    <form action='' method='post'>
+    <form action="/" method="POST">
+        {{ csrf_field() }}
     <div class="form-group">
       <label for="nome">Nome</label>
       <input type="text" name="nome" class="form-control" placeholder="Digite seu nome" >

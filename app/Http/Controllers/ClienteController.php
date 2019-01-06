@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Cliente;
 
 class ClienteController extends Controller
 {
@@ -19,7 +20,11 @@ class ClienteController extends Controller
 
     public function store(Request $request)
     {
-        //
+        $dadosForm = $request->all();
+        $cliente = new Cliente($dadosForm);
+        $cliente->save();
+
+        return redirect('/') ;
     }
 
     public function show($id)
