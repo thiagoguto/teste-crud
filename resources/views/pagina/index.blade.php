@@ -1,6 +1,7 @@
 @extends('assets.app')
 @section('content')
     <h1>Lista de Clientes</h1>
+    <a  class="btn btn-primary mb-3" href="{{ route('createCliente') }}" role="button">Novo Cliente</a>
     <table class="table table-striped table-inverse table-responsive ">
         <thead class="thead-inverse">
             <tr>
